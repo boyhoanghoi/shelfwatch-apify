@@ -221,6 +221,22 @@ class PipelineTests(unittest.IsolatedAsyncioTestCase):
             await resolver.resolve("shop.example.com")
         await resolver.close()
 
+    async def test_robots_failures_preserve_cause_and_deny_access(self):
+        config = RunConfig.from_dict({"productUrls": [URL]})
+        for status, http_status in [("timeout", None), ("http_error", 503)]:
+            client = SafeHttpClient(config)
+            async def fail(*args, **kwargs):
+                raise FetchError(status, "Failed", http_status)
+            client.fetch = fail
+            with self.assertRaises(FetchError) as caught:
+                await client.allowed(URL)
+            self.assertIn(status, str(caught.exception))
+            self.assertEqual(caught.exception.http_status, http_status)
+        client = SafeHttpClient(config)
+        async def denied(*args, **kwargs): raise FetchError("blocked", "Denied", 403)
+        client.fetch = denied
+        self.assertFalse(await client.allowed(URL))
+
 
 class LockTests(unittest.IsolatedAsyncioTestCase):
     async def test_busy_lock_is_not_released_or_used(self):

@@ -157,7 +157,7 @@ class SafeHttpClient:
                         rules = "User-agent: *\nDisallow: /"
                     else:
                         # Do not silently crawl when the site's rules cannot be read.
-                        raise FetchError("robots_unavailable", "Could not read robots.txt; skipped conservatively.") from None
+                        raise FetchError("robots_unavailable", f"Could not read robots.txt ({exc.status}); skipped conservatively.", exc.http_status) from None
                 else:
                     # Robots rules are authoritative regardless of a site's
                     # mistaken MIME type. HTML-only branded 404 lines are ignored

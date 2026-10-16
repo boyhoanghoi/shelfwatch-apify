@@ -27,8 +27,8 @@ rather than another full catalogue dump.
 ```json
 {
   "productUrls": [
-    "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
-    "https://deathwishcoffee.com/products/gift-card"
+    "https://colourpop.com/products/eeveelution-shadow-palette",
+    "https://deathwishcoffee.com/products/death-wish-instant-coffee-1"
   ],
   "monitorName": "my-watchlist",
   "maxProducts": 20,

@@ -13,8 +13,8 @@
       "editor": "stringList",
       "description": "1?100 HTTPS Shopify /products/handle page URLs. Remove query/variant/tracking parameters. Store roots, collection URLs and nonstandard ports are rejected. Locale prefixes such as /en-gb are supported. Same URL continues its baseline.",
       "prefill": [
-        "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
-        "https://deathwishcoffee.com/products/gift-card"
+        "https://colourpop.com/products/eeveelution-shadow-palette",
+        "https://deathwishcoffee.com/products/death-wish-instant-coffee-1"
       ],
       "minItems": 1,
       "maxItems": 100
