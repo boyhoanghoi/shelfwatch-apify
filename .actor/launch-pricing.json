@@ -1,0 +1,19 @@
+{
+  "pricingInfos": [
+    {
+      "pricingModel": "PAY_PER_EVENT",
+      "pricingPerEvent": {
+        "actorChargeEvents": {
+          "product-checked": {
+            "eventTitle": "Successful product check saved",
+            "eventDescription": "One successfully validated Shopify product saved to the dataset, including NO_ALERT/unchanged and first-observation checks. Variants, alert rows and exports are included. Failed/blocked/invalid/unprocessed products have no check event.",
+            "eventPriceUsd": 0.002,
+            "isPrimaryEvent": true,
+            "isOneTimeEvent": false
+          }
+        }
+      },
+      "minimalMaxTotalChargeUsd": 0.002
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Paid checks, change observations and monitor state summary",
+  "properties": {
+    "checks": {
+      "type": "string",
+      "title": "All saved paid checks",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/RESULTS"
+    },
+    "alerts": {
+      "type": "string",
+      "title": "Flattened change observations",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/ALERTS"
+    },
+    "checksCsv": {
+      "type": "string",
+      "title": "Checks CSV",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/checks.csv"
+    },
+    "alertsCsv": {
+      "type": "string",
+      "title": "Alerts CSV",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/alerts.csv"
+    },
+    "alertsNdjson": {
+      "type": "string",
+      "title": "Alerts NDJSON",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/alerts.ndjson"
+    },
+    "digest": {
+      "type": "string",
+      "title": "Watchlist digest",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/digest.md"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Billing and monitor summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/SUMMARY"
+    },
+    "diagnostics": {
+      "type": "string",
+      "title": "Failed products and monitor errors",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/DIAGNOSTICS"
+    }
+  }
+}

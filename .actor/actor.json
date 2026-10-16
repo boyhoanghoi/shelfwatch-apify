@@ -1,0 +1,20 @@
+{
+  "actorSpecification": 1,
+  "name": "shopify-price-restock-monitor-shelfwatch",
+  "title": "Shopify Price & Restock Monitor | ShelfWatch",
+  "description": "Watch Shopify product prices and restocks on a schedule. Automatic per-user history, variant-level changes, overlap protection and CSV/JSON alerts. One fee per saved successful product check, including checks without alerts.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "dockerContextDir": "..",
+  "readme": "./README.md",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "defaultMemoryMbytes": 512,
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 1024,
+  "usesStandbyMode": false
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Shopify Price & Restock Monitor | ShelfWatch",
+  "description": "Watch Shopify product prices and restocks on a schedule. Automatic per-user history, variant-level changes, overlap protection and CSV/JSON alerts. One fee per saved successful product check, including checks without alerts.",
+  "seoTitle": "Shopify Price Tracker & Restock Alerts | ShelfWatch",
+  "seoDescription": "Monitor specific Shopify products on a schedule: variant prices, restocks, automatic per-user history and alert-ready CSV/JSON. $2 per 1,000 successful saved checks, including unchanged.",
+  "categories": [
+    "ECOMMERCE",
+    "AUTOMATION"
+  ],
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 300,
+    "memoryMbytes": 512
+  },
+  "actorPermissionLevel": "LIMITED_PERMISSIONS"
+}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shelfwatch-apify"
+version = "0.1.0"
+description = "Scheduled Shopify product price and restock checks with persistent watchlists and variant-level change evidence."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["aiohttp>=3.14.5,<4", "protego>=0.7,<0.8"]
+
+[project.optional-dependencies]
+actor = ["apify==3.4.1", "apify-client==2.5.1"]
+
+[project.scripts]
+shelfwatch = "shelfwatch.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,153 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "productUrl": {
+        "type": "string",
+        "title": "Watched product URL"
+      },
+      "finalProductUrl": {
+        "type": "string",
+        "title": "Final product page"
+      },
+      "productKey": {
+        "type": "string",
+        "title": "Stable watch URL key"
+      },
+      "productId": {
+        "type": "string",
+        "title": "Shopify product ID"
+      },
+      "title": {
+        "type": "string",
+        "title": "Product"
+      },
+      "vendor": {
+        "type": "string",
+        "title": "Vendor"
+      },
+      "currency": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Observed HTML currency"
+      },
+      "currencySource": {
+        "type": "string",
+        "title": "Currency evidence type"
+      },
+      "currencyEvidenceUrl": {
+        "type": "string",
+        "title": "Currency evidence page"
+      },
+      "priceUnitScale": {
+        "type": "integer",
+        "title": "Ajax raw price scale"
+      },
+      "minPriceAmount": {
+        "type": "string",
+        "title": "Minimum variant price"
+      },
+      "maxPriceAmount": {
+        "type": "string",
+        "title": "Maximum variant price"
+      },
+      "available": {
+        "type": "boolean",
+        "title": "Any variant buyable"
+      },
+      "variantCount": {
+        "type": "integer",
+        "title": "Exposed variants"
+      },
+      "inStockVariantCount": {
+        "type": "integer",
+        "title": "Buyable variants"
+      },
+      "variantWindowMayBeTruncated": {
+        "type": "boolean",
+        "title": "250-variant window warning"
+      },
+      "variants": {
+        "type": "array",
+        "title": "Variant price/availability observations"
+      },
+      "isChanged": {
+        "type": "boolean",
+        "title": "Has alert conditions"
+      },
+      "changeCount": {
+        "type": "integer",
+        "title": "Change observations"
+      },
+      "changes": {
+        "type": "array",
+        "title": "Embedded change observations"
+      },
+      "checkStatus": {
+        "type": "string",
+        "title": "Check status"
+      },
+      "priceComparisonStatus": {
+        "type": "string",
+        "title": "Currency comparability"
+      },
+      "previousObservedAt": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Previous saved check"
+      },
+      "observedAt": {
+        "type": "string",
+        "title": "Observed at"
+      },
+      "sourceUrl": {
+        "type": "string",
+        "title": "Public Ajax source"
+      }
+    },
+    "required": [
+      "productKey",
+      "productUrl",
+      "productId",
+      "title",
+      "variants",
+      "checkStatus",
+      "changes",
+      "observedAt"
+    ]
+  },
+  "views": {
+    "overview": {
+      "title": "Product checks ? every row is billable",
+      "transformation": {
+        "fields": [
+          "title",
+          "currency",
+          "minPriceAmount",
+          "available",
+          "checkStatus",
+          "changeCount",
+          "observedAt",
+          "productUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "productUrl": {
+            "format": "link"
+          },
+          "observedAt": {
+            "format": "date"
+          }
+        }
+      }
+    }
+  },
+  "title": "Every saved successful product check"
+}

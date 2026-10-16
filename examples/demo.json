@@ -1,0 +1,10 @@
+{
+  "productUrls": [
+    "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
+    "https://deathwishcoffee.com/products/gift-card"
+  ],
+  "monitorName": "my-watchlist",
+  "maxProducts": 2,
+  "minPriceChangePercent": 1,
+  "timeoutSeconds": 15
+}

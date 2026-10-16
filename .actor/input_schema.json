@@ -1,0 +1,57 @@
+{
+  "title": "A repeating Shopify product watchlist",
+  "description": "Check specific public Shopify product pages. Persistent history stays in the running user's account under monitorName. $0.002 per saved successful check, including NO_ALERT; failures have no check event. No automatic message delivery.",
+  "type": "object",
+  "schemaVersion": 1,
+  "required": [
+    "productUrls"
+  ],
+  "properties": {
+    "productUrls": {
+      "title": "Product URLs",
+      "type": "array",
+      "editor": "stringList",
+      "description": "1?100 HTTPS Shopify /products/handle page URLs. Remove query/variant/tracking parameters. Store roots, collection URLs and nonstandard ports are rejected. Locale prefixes such as /en-gb are supported. Same URL continues its baseline.",
+      "prefill": [
+        "https://www.allbirds.com/products/mens-runner-nz-slip-on-mushroom",
+        "https://deathwishcoffee.com/products/gift-card"
+      ],
+      "minItems": 1,
+      "maxItems": 100
+    },
+    "monitorName": {
+      "title": "Monitor name ? keep this for scheduled runs",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Unique watchlist name in your own account. Actor automatically remembers saved successful checks between runs. New names start fresh history. Same-name overlapping runs fail before website requests/check fees.",
+      "default": "my-watchlist",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+    },
+    "maxProducts": {
+      "title": "Maximum successful/attempted products to select",
+      "type": "integer",
+      "description": "Select the first N unique input URLs. Spending limit and a 240-second pipeline deadline can reduce work further. Skipped products keep prior state and have no check event.",
+      "default": 20,
+      "prefill": 2,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "minPriceChangePercent": {
+      "title": "Minimum price alert movement (%)",
+      "type": "number",
+      "description": "Only price-rise/drop alerts are filtered. Compared to the immediately preceding saved check, not cumulative movement. Stock/currency/compare-at alerts are not filtered. Successful checks still cost $0.002 and update baseline, even without alerts.",
+      "default": 0,
+      "prefill": 1,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "timeoutSeconds": {
+      "title": "Per-request timeout (seconds)",
+      "type": "integer",
+      "description": "TLS-verified requests with robots and at least one second between requests to a host. No login/proxy/bypass.",
+      "default": 15,
+      "minimum": 5,
+      "maximum": 30
+    }
+  }
+}
