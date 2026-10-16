@@ -1,0 +1,80 @@
+{
+  "actorId": "W1pbtOwadL0b3CykQ",
+  "name": "shopify-price-restock-monitor-shelfwatch",
+  "username": "reliable_quatrain",
+  "isPublic": true,
+  "url": "https://apify.com/reliable_quatrain/shopify-price-restock-monitor-shelfwatch",
+  "github": "https://github.com/boyhoanghoi/shelfwatch-apify",
+  "packageVersion": "0.1.0",
+  "build": {
+    "buildId": "9J2vyKidm2CQI5dv1",
+    "finishedAt": "2026-10-16T12:12:27.537Z",
+    "buildNumberInt": 100004,
+    "buildNumber": "0.1.4"
+  },
+  "sourceCommit": "0dee2d2978cb6562ec24ee7fd8c4aad6c02cbb47",
+  "verifiedDate": "2026-10-16",
+  "unitTestsPassed": 32,
+  "schemasValidated": 3,
+  "billingEvent": "product-checked",
+  "eventPriceUsd": 0.002,
+  "chargesUnchangedChecks": true,
+  "noStartFee": true,
+  "cloudChecks": [
+    {
+      "runId": "byGNh6QGmfJdCFo7B",
+      "buildId": "9J2vyKidm2CQI5dv1",
+      "savedChecks": 2,
+      "chargedEventCounts": {
+        "product-checked": 2
+      },
+      "alertCount": 2,
+      "baselineWrites": 2,
+      "failedProducts": 0,
+      "stateStoreId": "eDdPFxRD7tXLAphfD",
+      "usageTotalUsd": 0.0010131155091689696,
+      "csvNdjsonDigestAndPersistentBaselineVerified": true
+    },
+    {
+      "runId": "zim5ew5kvejcptn9z",
+      "buildId": "9J2vyKidm2CQI5dv1",
+      "savedChecks": 2,
+      "chargedEventCounts": {
+        "product-checked": 2
+      },
+      "alertCount": 0,
+      "baselineWrites": 2,
+      "failedProducts": 0,
+      "stateStoreId": "eDdPFxRD7tXLAphfD",
+      "usageTotalUsd": 0.0010049150457514659,
+      "csvNdjsonDigestAndPersistentBaselineVerified": true
+    }
+  ],
+  "busyMonitorCheck": {
+    "runId": "WnSan80hZjWtXaArI",
+    "buildId": "cMvVMrxWNq2HWOMPp",
+    "status": "FAILED",
+    "chargedEventCounts": {
+      "product-checked": 0
+    },
+    "baselineWrites": 0,
+    "note": "Intentional server-side lock conflict. Lock code unchanged in final release; temporary test lock explicitly released."
+  },
+  "sourceAccessProbe": {
+    "runId": "o1ADvMMwn7KYoNS1B",
+    "result": "Allbirds robots.txt unavailable on cloud; skipped with no check event. Other product saved. Starter URLs updated based on cloud source probe pJoJFqJQRANcO6tvb."
+  },
+  "publicVerification": {
+    "storeHttpStatus": 200,
+    "anonymousPublicApi": true,
+    "previewInStoreHtml": true,
+    "previewImageHttpStatus": 200,
+    "monitorDocsInStoreHtml": true,
+    "pricingDisclosureInStoreHtml": true,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "pictureUrl": null
+  },
+  "customerRevenueVerified": false,
+  "scheduledOwnerTaskCreated": false,
+  "outreachSent": false
+}
