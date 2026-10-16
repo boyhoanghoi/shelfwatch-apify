@@ -17,7 +17,7 @@ up to 250 exposed variants, no exact inventory counts or access bypasses.
 I'm looking for feedback from someone already monitoring 10–50 product URLs.
 Does the sample output replace a manual check you currently do?
 
-Actor: STORE_URL
+Actor: https://apify.com/reliable_quatrain/shopify-price-restock-monitor-shelfwatch
 
 ## Tiếng Việt — nhóm bán hàng / automation
 
@@ -35,4 +35,4 @@ phải số tồn kho chính xác. Nguồn bị chặn có thể không dùng đ
 Mình muốn nhận phản hồi từ người đang kiểm tra khoảng 10–50 link thủ công xem
 đầu ra này có giúp tiết kiệm một việc lặp lại không.
 
-Actor: STORE_URL
+Actor: https://apify.com/reliable_quatrain/shopify-price-restock-monitor-shelfwatch

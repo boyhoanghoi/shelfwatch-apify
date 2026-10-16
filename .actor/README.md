@@ -124,8 +124,8 @@ customer usage illustration, not a promise of developer revenue or profit.
 ```powershell
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -e .
-shelfwatch --input examples/demo.json --output output/first --state-file output/watch-state.json
-shelfwatch --input examples/demo.json --output output/repeat --state-file output/watch-state.json
+.venv/Scripts/shelfwatch.exe --input examples/demo.json --output output/first --state-file output/watch-state.json
+.venv/Scripts/shelfwatch.exe --input examples/demo.json --output output/repeat --state-file output/watch-state.json
 ```
 
 Local CLI has no Actor check charges; network/hosting costs are yours. It uses an
