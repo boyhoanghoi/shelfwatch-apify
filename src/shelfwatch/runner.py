@@ -36,6 +36,7 @@ async def run_pipeline(config, load, save, *, client_factory=SafeHttpClient, dea
                     data = normalize_product(source.text, final_url, page.text)
                     # State identity is the original normalized watch URL. Redirect evidence is retained.
                     data.update({"productKey": product_key(url), "productUrl": url,
+                                 "monitorName": config.monitor_name,
                                  "finalProductUrl": final_url, "sourceUrl": source.url,
                                  "observedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")})
                     return data

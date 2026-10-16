@@ -122,6 +122,17 @@ class ChangeTests(unittest.TestCase):
         changed, _ = compare(row(100), compact_state(row(0)), 99)
         self.assertIsNone(changed["changes"][0]["percentChange"])
 
+    def test_later_restock_cycles_and_separate_monitors_have_distinct_event_ids(self):
+        initial = compact_state(row(1000, False, observedAt="t0"))
+        first, saved_first = compare(row(1000, True, observedAt="t1", monitorName="a"), initial)
+        _, saved_out = compare(row(1000, False, observedAt="t2", monitorName="a"), saved_first)
+        later, _ = compare(row(1000, True, observedAt="t3", monitorName="a"), saved_out)
+        self.assertNotEqual(first["changes"][0]["eventId"], later["changes"][0]["eventId"])
+        replay, _ = compare(row(1000, True, observedAt="retry", monitorName="a"), initial)
+        self.assertEqual(first["changes"][0]["eventId"], replay["changes"][0]["eventId"])
+        other, _ = compare(row(1000, True, monitorName="b"), initial)
+        self.assertNotEqual(first["changes"][0]["eventId"], other["changes"][0]["eventId"])
+
     def test_state_rejects_wrong_url_version_and_bad_availability(self):
         good = compact_state(row())
         self.assertEqual(validate_state(good, URL), good)

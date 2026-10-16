@@ -39,9 +39,11 @@ neutralizes spreadsheet formula prefixes.
 
 ## Stable IDs, retries and failures
 
-`eventId` hashes product identity, before/after state, change type and variant ID.
-Replaying the same before→after transition yields the same ID, excluding observation
-timestamps. Baseline promotions happen after paid dataset writes. There is no
+`eventId` hashes monitor/product identity, before/after state, the prior saved
+observation time, change type and variant ID. Replaying against the same baseline
+yields the same ID despite a new current observation timestamp. A later identical
+restock/price cycle has a different prior saved time and remains a distinct event.
+Baseline promotions happen after paid dataset writes. There is no
 transaction spanning the dataset and named KV store. A paid save followed by a KV
 failure fails the run and may repeat on retry; do not treat it as exactly-once.
 

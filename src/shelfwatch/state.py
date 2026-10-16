@@ -62,11 +62,15 @@ def compare(row, previous, min_percent=0):
     changes = []
     before = {k: v for k, v in (previous or {}).items() if k != "lastSavedAt"}
     after = {k: v for k, v in current.items() if k != "lastSavedAt"}
-    transition = digest({"before": before, "after": after})
+    # A replay against the same saved baseline keeps its ID. A later identical
+    # stock/price cycle must still be a new event, anchored to its prior save.
+    transition = digest({"before": before, "after": after,
+                         "baselineObservedAt": previous.get("lastSavedAt") if previous else None})
 
     def add(kind, variant=None, **details):
-        changes.append({"eventId": digest([row["productKey"], transition, kind, variant]),
+        changes.append({"eventId": digest([row.get("monitorName"), row["productKey"], transition, kind, variant]),
                         "type": kind, "variantId": variant, "productKey": row["productKey"],
+                        "monitorName": row.get("monitorName"),
                         "productUrl": row["productUrl"], "title": row["title"], "currency": row["currency"],
                         "previousObservedAt": previous.get("lastSavedAt") if previous else None,
                         "observedAt": row["observedAt"], **details})

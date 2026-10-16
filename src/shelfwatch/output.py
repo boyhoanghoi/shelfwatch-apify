@@ -21,11 +21,11 @@ def csv_text(rows, fields):
 
 
 def checks_csv(rows):
-    return csv_text(rows, ["productUrl", "title", "vendor", "currency", "currencySource", "minPriceAmount", "maxPriceAmount", "available", "variantCount", "inStockVariantCount", "checkStatus", "changeCount", "priceComparisonStatus", "previousObservedAt", "observedAt", "sourceUrl"])
+    return csv_text(rows, ["monitorName", "productUrl", "title", "vendor", "currency", "currencySource", "minPriceAmount", "maxPriceAmount", "available", "variantCount", "inStockVariantCount", "checkStatus", "changeCount", "priceComparisonStatus", "previousObservedAt", "observedAt", "sourceUrl"])
 
 
 def alerts_csv(alerts):
-    return csv_text(alerts, ["eventId", "type", "productUrl", "title", "variantId", "currency", "previousPriceAmount", "currentPriceAmount", "percentChange", "previousObservedAt", "observedAt"])
+    return csv_text(alerts, ["eventId", "monitorName", "type", "productUrl", "title", "variantId", "currency", "previousPriceAmount", "currentPriceAmount", "percentChange", "previousObservedAt", "observedAt"])
 
 
 def alerts_ndjson(alerts):

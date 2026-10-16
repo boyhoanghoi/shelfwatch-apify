@@ -108,6 +108,10 @@
       "sourceUrl": {
         "type": "string",
         "title": "Public Ajax source"
+      },
+      "monitorName": {
+        "type": "string",
+        "title": "Watchlist name"
       }
     },
     "required": [
